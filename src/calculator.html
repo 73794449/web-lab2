@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body class="darker">
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="index.html">
+                    <img class="logo rounded" src="./resources/logo/logo-dark.png" alt="">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a onclick="signOut()" class="nav-link" aria-current="page" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="profile.html">Check profile</a>
+                        </li>
+                        <li class="nav-item">
+                            <a onclick="signOut()" class="nav-link" href="index.html">Sign out</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html">About</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main role="main">
+        <section class="jumbotron text-center">
+            <div class="container padding pt-3">
+                <h1 class="jumbotron-heading">t3calc</h1>
+                <p class="lead text-muted">
+                    Time to calc.
+                </p>
+            </div>
+        </section>
+        <section>
+            <div class="container justify-content-center">
+                <div class="calculator card d-flex px-3 pt-2 shadow darker">
+                    <a>CURRENT:</a>
+                    <input id="cur-form" class="text" value='' readonly>
+                    <a>DEC:</a>
+                    <input id="dec-form" class="text" class="calculator-screen z-depth-1" value='' readonly>
+                    <a>HEX:</a>
+                    <input id="hex-form" class="text" class="calculator-screen z-depth-1" value='' readonly>
+                    <a>OCT:</a>
+                    <input id="oct-form" class="text" class="calculator-screen z-depth-1" value='' readonly>
+                    <a>BIN:</a>
+                    <input id="bin-form" class="text" class="calculator-screen z-depth-1" value='' readonly>
+                    <div class="container">
+                        <div class="calculator-keys">
+                            <div class="col text-center mb-3 my-3">
+
+
+
+
+                                <div class="col my-2 pt-2">
+                                    <button id="ce-button" type="button" class="operator btn my-button-color btn-calculator"
+                                        value="CE">CE</button>
+                                    <button id="c-button" type="button" class="operator btn my-button-color btn-calculator"
+                                        value="C">C</button>
+                                </div>
+                                <div class="col my-2 pt-2">
+                                    <button id="and-button" type="button" class="operator btn my-button-color btn-calculator"
+                                        value="AND">AND</button>
+                                    <button id="or-button" type="button" class="operator btn my-button-color btn-calculator"
+                                        value="OR">OR</button>
+                                        <button id="xor-button" type="button" class="operator btn my-button-color btn-calculator"
+                                        value="XOR">XOR</button>
+                                    <button id="not-button" type="button" class="operator btn my-button-color btn-calculator"
+                                        value="NOT">NOT</button>
+                                </div>
+                                <div class="col my-2">
+                                    <button id="pow-button" type="button" class="operator btn my-button-color btn-calculator"
+                                        value="↑">↑</button>
+                                    <button id="mul-button" type="button" class="operator btn my-button-color btn-calculator"
+                                        value="×">×</button>
+                                    <button id="div-button" type="button" class="operator btn my-button-color btn-calculator"
+                                        value="÷">÷</button>
+                                    <button id="plus-button" type="button" class="operator btn my-button-color btn-calculator"
+                                        value="+">+</button>
+                                    <button id="minus-button" type="button" class="operator btn my-button-color btn-calculator"
+                                        value="-">-</button>
+
+                                    <button id="roundsqbeg" type="button" class="operator btn my-button-color btn-calculator"
+                                        value="(">(</button>
+                                    <button id="roundsqend" type="button" class="operator btn my-button-color btn-calculator"
+                                        value=")">)</button>
+
+
+                                </div>
+                                <div class="col my-2">
+                                    <button id="a-button" type="button darker" class="operator btn my-button-color btn-calculator"
+                                        value="A">A</button>
+                                    <button id="b-button" type="button" class="operator btn my-button-color btn-calculator"
+                                        value="B">B</button>
+                                    <button id="c-button" type="button" class="operator btn my-button-color btn-calculator"
+                                        value="C">C</button>
+                                    <button id="d-button" type="button" class="operator btn my-button-color btn-calculator"
+                                        value="D">D</button>
+                                    <button id="e-button" type="button" class="operator btn my-button-color btn-calculator"
+                                        value="E">E</button>
+                                    <button id="f-button" type="button" class="operator btn my-button-color btn-calculator"
+                                        value="F">F</button>
+                                </div>
+                                <div class="col">
+                                    <div class="col text-center mb-1">
+                                        <button id="seven-button" type="button"
+                                            class="btn my-button-color-num waves-effect btn-calculator"
+                                            value="7">7</button>
+                                        <button id="eight-button" type="button"
+                                            class="btn my-button-color-num waves-effect btn-calculator"
+                                            value="8">8</button>
+                                        <button id="nine-button" type="button"
+                                            class="btn my-button-color-num waves-effect btn-calculator"
+                                            value="9">9</button>
+                                    </div>
+                                    <div class="col text-center mb-1">
+                                        <button id="four-button" type="button"
+                                            class="btn my-button-color-num waves-effect btn-calculator"
+                                            value="4">4</button>
+                                        <button id="five-button" type="button"
+                                            class="btn my-button-color-num waves-effect btn-calculator"
+                                            value="5">5</button>
+                                        <button id="six-button" type="button"
+                                            class="btn my-button-color-num waves-effect btn-calculator"
+                                            value="6">6</button>
+                                    </div>
+                                    <div class="col text-center mb-1">
+                                        <button id="one-button" type="button"
+                                            class="btn my-button-color-num waves-effect btn-calculator"
+                                            value="1">1</button>
+                                        <button id="two-button" type="button"
+                                            class="btn my-button-color-num waves-effect btn-calculator"
+                                            value="2">2</button>
+                                        <button id="three-button" type="button"
+                                            class="btn my-button-color-num waves-effect btn-calculator"
+                                            value="3">3</button>
+                                    </div>
+                                    <div id="zero-button" class="col text-center mb-1">
+                                        <button type="button"
+                                            class="btn my-button-color-num waves-effect btn-calculator"
+                                            value="0">0</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-center">
+                            <select id="format-select" class="form-select mb-3" aria-label="Select to-base">
+                                <option value="HEX">HEX</option>
+                                <option value="DEC" selected>DEC</option>
+                                <option value="BIN">BIN</option>
+                            </select>
+                            <button id="calculate-button" type="button" class="btn btn-primary mb-3">CALCULATE</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+    </main>
+    <footer class="my-5 pt-5 text-muted text-center text-small">
+        <p class="mb-1">@t3ry444y company 2024</p>
+        <ul class="list-inline-item">
+            <a onclick="signOut()" href="about.html">About</a>
+        </ul>
+    </footer>
+    <script type="module" src="js/calculator.js"></script>
+    <script src="js/signout.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

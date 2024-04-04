@@ -1,0 +1,19 @@
+{
+  "name": "web-lab2",
+  "version": "1.0.0",
+  "description": "Терентьєв Іван Дмитрович КВ-11\r ## Завдання\r ->enter task here\r ## Тематика додатка\r Калькулятор (режим звичайний, для програміста)",
+  "main": "index.js",
+  "scripts": {
+    "start": "parcel src/*.html",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel": "^2.12.0"
+  },
+  "dependencies": {
+    "mathjs": "^12.4.1"
+  }
+}
