@@ -5,3 +5,8 @@
 ->enter task here
 ## Тематика додатка
 Калькулятор (режим звичайний, для програміста)
+## Building 
+npm init -y
+npm install parcel
+npm install mathjs
+npm start
